@@ -10,12 +10,12 @@ public class MenuManager : MonoBehaviour {
 	public Button BtnAbout;
 
 	public void startGame(){
-		SceneManager.LoadScene(1);
+		SceneManager.LoadScene(2);
 	}
 	public void quitGame(){
 		Application.Quit ();
 	}
 	public void aboutGame(){
-		SceneManager.LoadScene (2);
+		SceneManager.LoadScene (1);
 	}
 }
