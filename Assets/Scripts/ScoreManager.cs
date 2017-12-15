@@ -9,9 +9,6 @@ public class ScoreManager : MonoBehaviour {
 	public Text Ply1Score;
 	public Text Ply2Score;
 	public GameObject ball;
-	void Start () {
-			
-	}
 
 	void Update () {
 		if (ball.transform.position.x >= 22){

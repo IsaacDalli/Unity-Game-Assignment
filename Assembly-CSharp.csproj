@@ -51,7 +51,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AboutManager.cs" />
      <Compile Include="Assets\Scripts\BallMovement.cs" />
+     <Compile Include="Assets\Scripts\MenuManager.cs" />
      <Compile Include="Assets\Scripts\Paddle1.cs" />
      <Compile Include="Assets\Scripts\Paddle2.cs" />
      <Compile Include="Assets\Scripts\ScoreManager.cs" />
