@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BallMovement : MonoBehaviour {
 	private Rigidbody2D rb;
@@ -12,6 +13,20 @@ public class BallMovement : MonoBehaviour {
 	public Rigidbody2D Pad2;
 
 	void Start () {
+		string scenen = SceneManager.GetActiveScene ().name;
+		switch (scenen) {
+		case "Scene1":
+			speed = 14f;
+			break;
+		case "Scene2":
+			speed = 16f;
+			break;
+		case "Scene3":
+			speed = 18f;
+			break;
+		default:
+			break;
+		}
 		rb = GetComponent<Rigidbody2D> ();
 		StartCoroutine (move ());
 	}
@@ -42,25 +57,5 @@ public class BallMovement : MonoBehaviour {
 			RandNum ++;
 		}
 		return RandNum;
-	}
-
-	void OnCollisionEnter2D(Collision2D col){
-		if (col.gameObject.name == "Paddle 1") {
-			if (Pad1.velocity.y > 1f) {
-				rb.velocity = new Vector2 (speed, speed);
-			} else if (Pad1.velocity.y < -1f) {
-				rb.velocity = new Vector2 (speed, -speed);
-			} else {
-				rb.velocity = new Vector2 (speed, 0);
-			}
-		} else if (col.gameObject.name == "Paddle 2") {
-			if (Pad2.velocity.y > 1f) {
-				rb.velocity = new Vector2 (-speed, speed);
-			} else if (Pad2.velocity.y < - 1f) {
-				rb.velocity = new Vector2 (-speed, -speed);
-			} else {
-				rb.velocity = new Vector2 (-speed, 0);
-			}
-		}
 	}
 }
