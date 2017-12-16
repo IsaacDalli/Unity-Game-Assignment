@@ -454,7 +454,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &784760605
 GameObject:
@@ -761,49 +761,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &866032039
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 866032041}
-  - component: {fileID: 866032040}
-  m_Layer: 0
-  m_Name: Game_Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &866032040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 866032039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 842a0654735788c4f91b60b89b7d5389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Ply1Score: {fileID: 1898687110}
-  Ply2Score: {fileID: 1551709598}
-  ball: {fileID: 1037762681}
---- !u!4 &866032041
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 866032039}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5841818, y: -1.3755066, z: -0.18359375}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &994235365
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,6 +1026,8 @@ MonoBehaviour:
   CountDown: {fileID: 1459274461}
   Pad1: {fileID: 784760606}
   Pad2: {fileID: 1023030036}
+  Ply1Score: {fileID: 1898687110}
+  Ply2Score: {fileID: 1551709598}
 --- !u!50 &1037762683
 Rigidbody2D:
   serializedVersion: 4

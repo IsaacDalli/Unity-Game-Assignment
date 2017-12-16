@@ -11,6 +11,8 @@ public class BallMovement : MonoBehaviour {
 	public Text CountDown;
 	public Rigidbody2D Pad1;
 	public Rigidbody2D Pad2;
+	public Text Ply1Score;
+	public Text Ply2Score;
 
 	void Start () {
 		string scenen = SceneManager.GetActiveScene ().name;
@@ -32,10 +34,18 @@ public class BallMovement : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Mathf.Abs(this.transform.position.x) >= 22){
-			this.transform.position = new Vector3 (0f,0f,0f);
+		if (this.transform.position.x >= 22) {
+			this.transform.position = new Vector3 (0f, 0f, 0f);
 			rb.velocity = new Vector2 (0f, 0f);
 			StartCoroutine (move ());
+			ScoreManager.checkScore (1);
+			Ply1Score.text = ScoreManager.P1.ToString();
+		} else if (this.transform.position.x <= -22) {
+			this.transform.position = new Vector3 (0f, 0f, 0f);
+			rb.velocity = new Vector2 (0f, 0f);
+			StartCoroutine (move ());
+			ScoreManager.checkScore (2);
+			Ply2Score.text = ScoreManager.P2.ToString();
 		}
 	}
 
@@ -57,5 +67,16 @@ public class BallMovement : MonoBehaviour {
 			RandNum ++;
 		}
 		return RandNum;
+	}
+
+	void OnCollisionEnter2D(Collision2D col){
+		float p1 = this.transform.position.y - GameObject.Find ("Paddle 1").transform.position.y;
+		float p2 = this.transform.position.y - GameObject.Find ("Paddle 2").transform.position.y;
+		if (col.gameObject.name == "Paddle 1") {
+			this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (speed, p1 * 2f);
+		}
+		if (col.gameObject.name == "Paddle 2") {
+			this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (-speed, p2 * 2f);
+		}
 	}
 }

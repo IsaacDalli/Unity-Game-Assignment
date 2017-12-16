@@ -1158,6 +1158,8 @@ MonoBehaviour:
   CountDown: {fileID: 1459274461}
   Pad1: {fileID: 784760606}
   Pad2: {fileID: 1023030036}
+  Ply1Score: {fileID: 1898687110}
+  Ply2Score: {fileID: 1551709598}
 --- !u!50 &1037762683
 Rigidbody2D:
   serializedVersion: 4
